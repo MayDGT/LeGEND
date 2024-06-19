@@ -1,0 +1,9 @@
+{
+  "lane_id": [1, 2, 3],
+  "target_lane": [1, 3],
+  "initial_speed": [0, 40],
+  "offset": [0, 50],
+  "target_speed": [0, 60],
+  "ac_target_speed": [30, 60],
+  "dc_target_speed": [0, 30]
+}

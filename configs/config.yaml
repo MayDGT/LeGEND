@@ -1,0 +1,29 @@
+# Apollo
+apollo_root: /home/tsc/apollo
+
+# simulator
+scenario_type: straight_road
+sim_time: 25
+sim_map: 12da60a7-2fc9-474d-a62a-5cc08cb97fe8 # SanFrancisco_correct
+hd_map: SanFrancisco
+
+# genetic algorithm
+pop_size: 8
+max_iteration: 10
+elite: 1
+## selection
+selection_num: 2
+tournament_round: 2
+
+crossover_rate: 0.4
+mutation_rate: 0.5
+
+# LLM
+http_proxy: http://127.0.0.1:7890
+https_proxy: https://127.0.0.1:7890
+api_key: sk-proj-ECQeYQ8kdhoir2vqAwiOT3BlbkFJFDBnZH6PKPkHWZ2306Jc
+#extraction_model: gpt-3.5-turbo-0613
+extraction_model: gpt-4-0613
+conversion_model: gpt-4-0613
+max_tokens: 1000
+temperature: 0.8

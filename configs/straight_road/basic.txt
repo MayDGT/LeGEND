@@ -1,0 +1,6 @@
+lane_id: [1, 3], 1 refers to the left lane, 2 refers to the middle lane, while 3 refers to the right lane;
+offset: longitude position on a lane, the default range is [0, 50] in meters. 0 refers to the front while 50 refers to the back;
+initial_speed: [0, 50] in MPH, the minimum speed is 0mph/s, while the maximum speed is 50mph/s;
+target_speed: [0, 50] in MPH, the minimum speed is 0mph/s, while the maximum speed is 50mph/s;
+target_lane: [1, 3]
+trigger_sequence: [1, 5]
