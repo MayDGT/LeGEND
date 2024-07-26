@@ -1,5 +1,5 @@
 # LeGEND
-This is the repository for our paper "LeGEND: A Top-Down Approach to Scenario Generation of Autonomous Driving Systems Assisted by Large Language Models"
+This is the repository for our paper "LeGEND: A Top-Down Approach to Scenario Generation of Autonomous Driving Systems Assisted by Large Language Models".
 
 ## Approach Overview
 ![approach overview](images/website_overview.png)
@@ -8,7 +8,7 @@ The workflow of our approach is depicted in the above figure, which consists of 
 * In Phase 1, LLM<sub>1</sub> extracts the useful information in an accident report and records them into an interactive pattern sequence (IPS);
 * In Phase 2, taking an IPS as input, LLM<sub>2</sub> translates it into a logical scenario represented in Domain Specific Language (DSL). <br />
 
-In the last phase, LeGEND employs a search-based technique to search for critical concrete scenarios, which is similar to existing studies.
+In Phase 3, LeGEND employs a search-based technique to search for critical concrete scenarios, which is similar to existing search-based ADS testing techniques.
 
 
 ## Dependencies
