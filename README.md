@@ -40,14 +40,7 @@ To reproduce the experimental results, users should follow the steps below:
 ├── configs
 │   ├── config.yaml
 │   ├── curve_road
-│   │   ├── basic.json
-│   │   ├── basic.txt
-│   │   └── road.json
 │   └── straight_road
-│       ├── basic.json
-│       ├── basic.txt
-│       ├── road_500m.json
-│       └── road.json
 ├── data
 │   └── accident_reports
 ├── legend
