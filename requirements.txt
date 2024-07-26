@@ -1,0 +1,4 @@
+pyyaml
+pandas
+openai
+shapely
