@@ -15,7 +15,7 @@ In the last phase, LeGEND employs a search-based technique to search for critica
 * Ubuntu 22.04 LTS
 * Apollo 7.0
 * LGSVL 2021.3
-* GPT-4
+* ChatGPT
 
 ## Usage
 To reproduce the experimental results, users should follow the steps below:
