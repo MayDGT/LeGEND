@@ -37,29 +37,29 @@ To reproduce the experimental results, users should follow the steps below:
 ## Project Structure
 ```
 .
-├── configs
-│   ├── config.yaml
-│   ├── curve_road
-│   └── straight_road
+├── configs                           
+│   ├── config.yaml                   # Necessary settings and hyperparameters for the approach
+│   ├── curve_road                    # Road data and default settings for parameters
+│   └── straight_road                 # Road data and default settings for parameters
 ├── data
-│   └── accident_reports
+│   └── accident_reports              # Selected accident reports from NHTSA
 ├── legend
-│   ├── core
-│   │   ├── algorithm.py
+│   ├── core                          # The source code of our approach
+│   │   ├── algorithm.py              
 │   │   ├── chromosome.py
 │   │   ├── converter.py
-│   │   ├── extractor.py
+│   │   ├── extractor.py              
 │   │   ├── scenario_model.py
 │   │   ├── simulation.py
 │   │   ├── statement.py
 │   │   └── testcase.py
-│   └── utils
+│   └── utils                         # Tools for API calls and simulations
 │       ├── fnds.py
 │       ├── llm_util.py
 │       ├── replay.py
 │       └── sim_util.py
-├── lgsvl
-├── main.py
+├── lgsvl                             # Code for simulator
+├── main.py                           # Entrance for this project
 ├── README.md
 └── requirements.txt
 
