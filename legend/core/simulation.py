@@ -7,7 +7,7 @@ import math
 import numpy as np
 from shapely.geometry import Point, LineString, Polygon
 # from monitor import MonitorController
-from llm4fuzz.utils import sim_util
+from legend.utils import sim_util
 
 logger = logging.getLogger(__name__)
 
