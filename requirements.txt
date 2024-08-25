@@ -2,3 +2,4 @@ pyyaml
 pandas
 openai
 shapely
+openpyxl
