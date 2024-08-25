@@ -2,13 +2,13 @@ import json
 
 import yaml
 
-from llm4fuzz.utils.llm_util import request_response
+from legend.utils.llm_util import request_response
 import re
 import ast
 import os
 import astunparse
-from llm4fuzz.core.testcase import TestCase
-from llm4fuzz.core.statement import ConstructorStatement, MethodStatement
+from legend.core.testcase import TestCase
+from legend.core.statement import ConstructorStatement, MethodStatement
 import logging
 
 logger = logging.getLogger(__name__)
