@@ -1,7 +1,7 @@
 from __future__ import annotations
-from llm4fuzz.core.chromosome import Chromosome, ChromosomeFactory
-from llm4fuzz.core.simulation import Simulation
-from llm4fuzz.utils import fnds
+from legend.core.chromosome import Chromosome, ChromosomeFactory
+from legend.core.simulation import Simulation
+from legend.utils import fnds
 import json
 import random
 import numpy as np
