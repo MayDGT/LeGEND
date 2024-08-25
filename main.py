@@ -41,7 +41,6 @@ data_rows = sheet.iter_rows(min_row=5, max_row=10, values_only=True)
 logger.info("caseid %s to %s", 5, 10)
 extractor = Extractor()
 converter = Converter()
-mutator = Mutator()
 
 concerete_testcase_str = """def testcase(self):
     vehicle1 = NPC(lane_id=2, offset=0.131228103185137, initial_speed=38.531054805837044)
