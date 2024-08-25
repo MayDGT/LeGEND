@@ -3,3 +3,4 @@ pandas
 openai
 shapely
 openpyxl
+astunparse
