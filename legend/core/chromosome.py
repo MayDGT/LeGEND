@@ -1,8 +1,8 @@
 from __future__ import annotations
 import json
 import logging
-from llm4fuzz.core.testcase import TestCase
-from llm4fuzz.core.statement import Statement, ConstructorStatement, MethodStatement
+from legend.core.testcase import TestCase
+from legend.core.statement import Statement, ConstructorStatement, MethodStatement
 
 import random
 import astunparse
