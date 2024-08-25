@@ -1,6 +1,6 @@
 import random
 
-from llm4fuzz.utils.llm_util import request_response
+from legend.utils.llm_util import request_response
 import re
 import logging
 import openpyxl
