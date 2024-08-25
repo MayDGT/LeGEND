@@ -6,7 +6,6 @@ import openpyxl
 from legend.core.algorithm import Fuzzer
 from legend.core.extractor import Extractor
 from legend.core.converter import Converter
-from legend.core.mutator import Mutator
 from legend.core.chromosome import Chromosome
 
 start_time = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
