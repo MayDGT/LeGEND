@@ -83,25 +83,4 @@ for row in data_rows:
     if flag is True:
         scenario_to_mutate[row[0]] = extracted_scenario
 
-for caseid, extracted_data in scenario_to_mutate.items():
-    mutated_scenario = None
-    try:
-        if logical_testcase_dict[caseid].method_statements[-1].args["trigger_sequence"][-1] < 3:
-            mutated_scenario = mutator.mutate(extracted_data, insert=True)
-        else:
-            mutated_scenario = mutator.mutate(extracted_data, insert=False)
-    except Exception as e:
-        logger.error(e)
-    if mutated_scenario is None:
-        continue
-
-    logical_testcase, flag = converter.convert(mutated_scenario)
-    count = 0
-    while flag is False and count <= 2:
-        logical_testcase, flag = converter.convert(mutated_scenario)
-        count += 1
-    logical_testcase_dict[caseid] = logical_testcase
-    flag = fuzzer.loop(logical_testcase)
-
-# for logical_testcase in logical_testcase_list:
 
