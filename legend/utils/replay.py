@@ -1,6 +1,6 @@
-from llm4fuzz.core.converter import Converter
-from llm4fuzz.core.algorithm import Fuzzer
-from llm4fuzz.core.chromosome import Chromosome
+from legend.core.converter import Converter
+from legend.core.algorithm import Fuzzer
+from legend.core.chromosome import Chromosome
 import yaml
 
 with open("../../configs/config.yaml") as f:
