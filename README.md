@@ -22,17 +22,35 @@ To reproduce the experimental results, users should follow the steps below:
 ### Preparation
 * Install Baidu Apollo following [Apollo Installation](https://github.com/ApolloAuto/apollo?tab=readme-ov-file#installation)
 * Install LGSVL simulator following [LGSVL Installation](https://github.com/YuqiHuai/SORA-SVL)
-* Clone this project and install the required packages: <br />
+* Clone this project and create a virtual environment: <br />
+  ```conda create -n legend python=3.8```
+* Install the required packages: <br />
   ```pip install -r requirements.txt```
+* Comment out certain lines to address the known issue with ```astunparse``` in Python, following the instructions at [here](https://github.com/simonpercivall/astunparse/issues/43#issue-554412833)
 * Set your ChatGPT API key and other configurations in ```configs/config.yaml```
-### Run
-* Start LGSVL simulator
+
+### Run the Transformation
+The core technique of LeGEND involves transforming accident reports into logical scenarios in DSL format, utilizing two large language models. In our paper, we selected 20 accident reports from the NHTSA database as initial seeds, covering a variety of road types and vehicle counts. <br /> 
+To evaluate this transformation process, you can execute the script found in the ```/scripts``` directory: <br />
+* ```cd scripts && python run_transformation.py```
+
+### Run the Complete Framework
+* Launch the LGSVL simulator by executing the file named ```simulator``` in the unzipped LGSVL directory. Then, open the cloud web
+interface at ```http://localhost``` and start an API-only simulation. If successfully, you should see ```API Ready!``` on the simulator GUI.
 * Start Apollo inside the apollo container: <br />
   ``` bash scripts/bootstrap.sh ``` <br />
   ``` bash scripts/bridge ```
-* Run LeGEND: <br />
-  ```python3 main.py```
-* The results will be stored in ``` data/results ```, and the system log will be stored in ``` data/logs ```
+* In the Apollo container, start Apollo Dreamview, which can be accessed at ```http://localhost:8888```: <br />
+  ```bash scripts/bootstrap_lgsvl.sh start```
+* While still in the container, initiate the bridge between Apollo and LGSVL: <br />
+  ```bash scripts/bridge.sh```
+* Open another terminal and run the complete testing framework: <br />
+  ``` conda activate legend && python main.py```
+
+**Results Verification** If LeGEND runs successfully, the ADS simulation environment should function correctly. The terminal will display the evolution process of the generated critical scenarios, and all system logs will be recorded in the ```data/logs``` folder. After each run for a given accident report, the results including the number of identified critical scenarios and the critical scenarios in DSL format will be saved in the ```data/results``` folder as JSON files. There are two methods to verify the experimental results: <br>
+*  you can open the JSON file and check the number of identified critical scenarios, which should closely match the proportion described in our paper;
+*  Alternatively, you can replay the critical scenarios using the script located in the ```legend/utils``` directory: <br>
+  ``` python replay.py```
 
 ## Project Structure
 ```
