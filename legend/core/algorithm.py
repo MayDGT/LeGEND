@@ -169,7 +169,8 @@ class Fuzzer:
         # logger.info("The best individual: %s \r\n its fitness score is %s",
         #                  self.chrom2string(self.population[0]), str(self.population[0].fitness))
 
-    def loop(self, logical_testcase):
+    def loop(self, logical_testcase, road_str):
+        self.sim.set_road(road_str)
         self.logical_testcase = logical_testcase
         self.pop_size = logical_testcase.size()
         logger.info("Pop size: %d", self.pop_size)
