@@ -79,10 +79,13 @@ for row in data_rows:
     while flag is False and count <= 2:
         logical_testcase, flag = converter.convert(extracted_scenario)
         count += 1
-# logical_testcase = converter.parse_testcase_string(testcase_str)
-# # logical_testcase = converter.replace_ego(logical_testcase, [2])
+
     logical_testcase_dict[row[0]] = logical_testcase
-    num, cs_list = fuzzer.loop(logical_testcase)
+    if re.search(r'\bcurve\w*\b', report, re.IGNORECASE):
+        road_str = "curve_road"
+    else:
+        road_str = "straight_road"
+    num, cs_list = fuzzer.loop(logical_testcase, road_str)
 
     record_path = "data/results/" + str(id) + '.json'
     data = {}
