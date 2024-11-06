@@ -21,7 +21,7 @@ mutation_rate: 0.5
 # LLM
 http_proxy: http://127.0.0.1:7890
 https_proxy: https://127.0.0.1:7890
-api_key: sk-proj-ECQeYQ8kdhoir2vqAwiOT3BlbkFJFDBnZH6PKPkHWZ2306Jc
+api_key: sk-proj-yptDRP3BtGjNuwxpQdcsT3BlbkFJmgPA72iT9VWgKotZd9ac
 #extraction_model: gpt-3.5-turbo-0613
 extraction_model: gpt-4-0613
 conversion_model: gpt-4-0613

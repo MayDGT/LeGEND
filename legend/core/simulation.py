@@ -22,6 +22,11 @@ class Simulation:
         self.hd_map = hd_map
 
         self.testcase = None
+
+        self.road = None
+        # with open(path + '/configs/straight_road/road.json') as f:
+        #     self.road = json.load(f)
+
         self.npc_list = None
 
         # record
@@ -35,7 +40,7 @@ class Simulation:
         path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
         with open(path + '/configs/' + road_str + '/road.json') as f:
             self.road = json.load(f)
-            
+
     def connect_simulator(self):
         try:
             sim = lgsvl.Simulator(address="127.0.0.1", port=8181)
