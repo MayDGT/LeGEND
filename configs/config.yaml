@@ -1,4 +1,4 @@
-# Apollo e.g., /home/tsc/apollo
+# Apollo
 apollo_root: Your Apollo Root
 
 # simulator
@@ -21,7 +21,7 @@ mutation_rate: 0.5
 # LLM
 http_proxy: http://127.0.0.1:7890
 https_proxy: https://127.0.0.1:7890
-api_key: Your Api Key
+api_key: Your API Key
 extraction_model: gpt-4-0613
 conversion_model: gpt-4-0613
 max_tokens: 1000

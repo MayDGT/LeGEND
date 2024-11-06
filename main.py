@@ -57,6 +57,7 @@ concerete_testcase_str = """def testcase(self):
 testcase = converter.parse_testcase_string(concerete_testcase_str)
 chrom = Chromosome(concrete_testcase=testcase)
 fuzzer = Fuzzer(config=config)
+fuzzer.sim.set_road("straight_road")
 fuzzer.eval(chrom)
 
 scenario_to_mutate = {}  # id: func_scenario
@@ -101,7 +102,7 @@ for row in data_rows:
         road_str = "straight_road"
     num, cs_list = fuzzer.loop(logical_testcase, road_str)
 
-    record_path = "data/results/" + str(id) + '.json'
+    record_path = "data/results/" + str(row[0]) + '.json'
     data = {}
     data["collision_num"] = num
     data["critical_scenarios"] = cs_list

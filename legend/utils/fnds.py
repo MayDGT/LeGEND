@@ -1,6 +1,5 @@
 import numpy as np
 
-
 def cdist(A, B, **kwargs):
     from scipy.spatial import distance
     return distance.cdist(A.astype(float), B.astype(float), **kwargs)
