@@ -47,11 +47,6 @@ interface at ```http://localhost``` and start an API-only simulation. If success
 * Open another terminal and run the complete testing framework: <br />
   ``` conda activate legend && python main.py```
 
-**Results Verification** If LeGEND runs successfully, the ADS simulation environment should function correctly. The terminal will display the evolution process of the generated critical scenarios, and all system logs will be recorded in the ```data/logs``` folder. After each run for a given accident report, the results including the number of identified critical scenarios and the critical scenarios in DSL format will be saved in the ```data/results``` folder as JSON files. There are two methods to verify the experimental results: <br>
-*  you can open the JSON file and check the number of identified critical scenarios, which should closely match the proportion described in our paper;
-*  Alternatively, you can replay the critical scenarios using the script located in the ```legend/utils``` directory: <br>
-  ``` python replay.py```
-
 ## Project Structure
 ```
 .
