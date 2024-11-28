@@ -93,20 +93,6 @@ for row in data_rows:
     data = {}
     data["collision_num"] = num
     data["critical_scenarios"] = cs_list
-
-    logical_testcase_dict[row[0]] = logical_testcase
-
-    if re.search(r'\bcurve\w*\b', report, re.IGNORECASE):
-        road_str = "curve_road"
-    else:
-        road_str = "straight_road"
-    num, cs_list = fuzzer.loop(logical_testcase, road_str)
-
-    record_path = "data/results/" + str(row[0]) + '.json'
-    data = {}
-    data["collision_num"] = num
-    data["critical_scenarios"] = cs_list
-
     with open(record_path, 'w') as f:
         json.dump(data, f, indent=4)
 
