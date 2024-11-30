@@ -135,7 +135,7 @@ class Converter:
         # print(testcase_str)
 
         testcase = self.parse_testcase_string(testcase_str)
-        testcase = self.replace_ego(testcase, extracted_data["candidate_ego"])
+        testcase = self.replace_ego(testcase)
         if len(re.findall(r'\b\d+(?:st|nd|rd|th)\b', extracted_data["func_scenario"])) != 0:
             testcase.is_reverse = True
 
@@ -262,8 +262,16 @@ class Converter:
         return testcase
 
     @staticmethod
-    def replace_ego(testcase: TestCase, candidate_ego: list):
+    def replace_ego(testcase: TestCase):
         statement_list = testcase.statements
+        frequency_dict = {}
+        for stmt in statement_list:
+            if isinstance(stmt, ConstructorStatement):
+                frequency_dict[stmt.assignee] = 0
+            if isinstance(stmt, MethodStatement):
+                frequency_dict[stmt.callee] += 1
+        min_value = min(frequency_dict.values())
+        candidate_ego = [key[-1] for key, value in frequency_dict.items() if value == min_value]
         for i in reversed(range(len(statement_list))):
             statement = statement_list[i]
             if isinstance(statement, ConstructorStatement) and statement.assignee[-1] in candidate_ego:
